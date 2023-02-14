@@ -1,0 +1,8 @@
+services:
+  api:
+    build: .
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./microservice:/microservice
+    command: bash -c "uvicorn microservice.main:app --host 0.0.0.0 --port 8080 --reload"
